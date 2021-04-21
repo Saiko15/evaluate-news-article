@@ -3,6 +3,7 @@ dotenv.config();
 
 var path = require('path')
 const express = require('express')
+var cors = require('cors')
 
 const mockAPIResponse = require('./mockAPI.js')
 

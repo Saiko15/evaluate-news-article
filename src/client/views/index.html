@@ -6,33 +6,28 @@
   </head>
 
   <body>
-    <main>
-      <div class="container">
-        <p>Enter a URL of an article / a blog to discover its sentiment.</p>
-        <section>
-          <form id="form">
-            <label for="article-url">URL</label>
-            <input id="article-url" type="text" name="input" value="" placeholder="Enter Article URL here" />
-            <button
-              type="submit"
-              class="btn-submit"
-            >
-              Submit
-            </button>
-          </form>
-        </section>
-
-        <section>
-          <strong>Form Results:</strong>
-          <div id="text"></div>
-          <div id="agreement"></div>
-          <div id="subjectivity"></div>
-          <div id="confidence"></div>
-          <div id="irony"></div>
-          <div id="score_tag"></div>
-        </section>
+    <header>
+      <div class="">
+          Logo
       </div>
-    </main>
+      <div class="">
+          navigation
+      </div>
+  </header>
+
+  <main>
+      <section>
+          <form class="" onsubmit="return Client.handleSubmit(event)">
+              <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+              <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+          </form>
+      </section>
+
+      <section>
+          <strong>Form Results:</strong>
+          <div id="results"></div>
+      </section>
+  </main>
     <script>
       // Check that service workers are supported
       if ('serviceWorker' in navigator) {
