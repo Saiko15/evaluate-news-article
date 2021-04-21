@@ -18,14 +18,19 @@
   <main>
       <section>
           <form class="" onsubmit="return Client.handleSubmit(event)">
-              <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+              <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="URL">
               <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
           </form>
       </section>
 
       <section>
           <strong>Form Results:</strong>
-          <div id="results"></div>
+          <div id="text"></div>
+          <div id="agreement"></div>
+          <div id="subjectivity"></div>
+          <div id="confidence"></div>
+          <div id="irony"></div>
+          <div id="score_tag"></div>    
       </section>
   </main>
     <script>
