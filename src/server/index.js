@@ -7,6 +7,10 @@ var cors = require('cors')
 
 const mockAPIResponse = require('./mockAPI.js')
 
+const baseUrl = 'https://api.meaningcloud.com/sentiment-2.1'
+const application_key = process.env.API_KEY
+
+
 const app = express()
 
 const PORT = 8081
@@ -22,7 +26,7 @@ app.use(express.json());
 console.log(__dirname)
 
 app.post('/test', (req, res) => {
-    textapi.sentiment({
+    baseUrl.sentiment({
         'url': req.body.text
     }, function(error, response) {
         res.send(response);
