@@ -30,8 +30,8 @@ app.post('/test', async (req, res) => {
     const response = await fetch(`${baseUrl}${API_KEY}&of=json&txt&model=general&lang=en&url=${req.body.url}`)
     console.log('server response', response)
     const data = await response.json();
-    console.log('server side', data)
-    const projectData = {
+    console.log('server data', data)
+    const ServerData = {
         score_tag = data.score_tag,
         confidence = data.confidence,
         irony = data.irony,
@@ -39,8 +39,8 @@ app.post('/test', async (req, res) => {
         agreement = data.agreement
 
     } 
-    res.send(projectData)
-    console.log(projectData)
+    res.send(ServerData)
+    console.log(ServerData)
       
 });
 

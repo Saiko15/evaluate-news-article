@@ -9,5 +9,4 @@ import './styles/header.scss'
 
 export {
     checkForName,
-    handleSubmit
-   }
+    handleSubmit }
