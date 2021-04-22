@@ -25,12 +25,23 @@ app.use(express.json());
 
 console.log(__dirname)
 
-app.post('/test', (req, res) => {
-    baseUrl.sentiment({
-        'url': req.body.text
-    }, function(error, response) {
-        res.send(response);
-    });
+app.post('/test', async (req, res) => {
+    urlEntry = req.body,url;
+    const response = await fetch(`${baseUrl}${API_KEY}&of=json&txt&model=general&lang=en&url=${req.body.url}`)
+    console.log('server response', response)
+    const data = await response.json();
+    console.log('server side', data)
+    const projectData = {
+        score_tag = data.score_tag,
+        confidence = data.confidence,
+        irony = data.irony,
+        subjectivity = data.subjectivity,
+        agreement = data.agreement
+
+    } 
+    res.send(projectData)
+    console.log(projectData)
+      
 });
 
 
